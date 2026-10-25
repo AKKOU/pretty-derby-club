@@ -1,16 +1,36 @@
-# React + Vite
+# 🐎 小馬俱樂部｜Pretty Derby Club
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+**小馬俱樂部（Pretty Derby Club）** 是一個以《賽馬娘 Pretty Derby》為主題的非官方粉絲網站，希望打造一個充滿活力、可愛且具有互動性的同好交流空間。
 
-Currently, two official plugins are available:
+網站以粉色、紫色及藍色為主要配色，結合漸層背景、客製化視覺設計與動態效果，呈現輕鬆活潑的遊戲氛圍。
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ 網站介紹
 
-## React Compiler
+### 🏠 首頁｜Home
+介紹小馬俱樂部，透過視覺設計與互動元素呈現網站特色。
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 👥 成員介紹｜Members
+展示俱樂部成員，讓訪客認識社群中的夥伴。
 
-## Expanding the Oxlint configuration
+### 📸 活動紀錄｜Events
+以照片牆呈現俱樂部的活動紀錄，支援點擊放大、縮放檢視等互動功能。
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+### 💌 聯繫我們｜Contact
+提供訪客填寫姓名、電子信箱、賽馬娘好友代碼及回饋訊息的表單介面。
+
+## 🎨 設計特色
+
+- **粉嫩視覺風格：** 以粉紫漸層、點點背景及客製化圖片營造可愛氛圍。
+- **互動式介面：** 使用動態側邊選單、圖片放大效果及滑鼠互動動畫。
+- **小馬載入動畫：** 以跳動的小馬作為網站載入畫面。
+- **響應式設計：** 針對不同螢幕尺寸調整網站排版。
+
+## 🛠️ 使用技術
+
+React · Vite · JavaScript · CSS · Framer Motion · React Router
+
+## 📌 專案說明
+
+本網站為非官方粉絲創作專案，主要用於網頁設計、前端開發及互動體驗實作，與 Cygames 無官方合作或隸屬關係。
+
+《賽馬娘 Pretty Derby》相關角色、名稱及官方素材之權利歸原權利人所有。
