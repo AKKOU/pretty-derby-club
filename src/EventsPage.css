@@ -1,0 +1,346 @@
+.events-page {
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  color: #3b354d;
+  font-family: "Noto Sans TC", sans-serif;
+  background:
+    url('/images/BG_Dot.png') repeat,
+    linear-gradient(to bottom, #ffdcf4, #d3dbff);
+}
+
+/* Menu 按鈕 */
+.events-menu-btn {
+  position: fixed;
+  top: 28px;
+  left: 28px;
+  z-index: 10;
+  width: 130px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.events-menu-btn img {
+  display: block;
+  width: 100%;
+}
+
+/* 主內容 */
+.events-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 115px 5% 100px;
+  text-align: center;
+}
+
+.events-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.events-title-img {
+  display: block;
+  width: min(420px, 75%);
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 600px) {
+  .events-title-img {
+    width: min(320px, 85%);
+  }
+}
+
+.events-subtitle {
+  margin: 5% 0 55px;
+  color: #987dbb;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+/* 照片排列 */
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.events-photo {
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  padding: 10px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 8px 25px rgba(114, 91, 161, 0.14);
+}
+
+.events-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+/* Menu 遮罩 */
+.events-menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  visibility: hidden;
+  opacity: 0;
+  background: rgba(44, 34, 67, 0.48);
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.events-menu-overlay.is-open {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* 側邊選單 */
+.events-side-menu {
+  position: fixed;
+  z-index: 21;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: min(400px, 88vw);
+  padding: 34px 34px 48px;
+  overflow-y: auto;
+  background: linear-gradient(160deg, #fff3fb, #e3ddfb);
+  box-shadow: 10px 0 30px rgba(50, 36, 83, 0.22);
+  transform: translateX(-105%);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.events-side-menu.is-open {
+  transform: translateX(0);
+}
+
+.events-menu-close {
+  align-self: flex-end;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  color: #715e9d;
+  background: transparent;
+  font-size: 2.4rem;
+  cursor: pointer;
+}
+
+.events-logo-link {
+  display: block;
+  align-self: center;
+  width: min(270px, 90%);
+  margin: 14px 0 38px;
+}
+
+.events-side-menu-logo {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.25s ease;
+}
+
+.events-logo-link:hover .events-side-menu-logo {
+  transform: scale(1.05);
+}
+
+.events-side-menu-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.events-side-menu-nav a {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 18px 20px;
+  border-radius: 14px;
+  color: #58456f;
+  background: rgba(255, 255, 255, 0.55);
+  font-size: 1.25rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.events-side-menu-nav a:hover {
+  background: rgba(255, 255, 255, 0.95);
+  transform: translateX(6px);
+}
+
+.events-side-menu-nav small {
+  color: #8d7cad;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+}
+
+/* 平板 */
+@media (max-width: 900px) {
+  .events-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* 手機 */
+@media (max-width: 600px) {
+  .events-menu-btn {
+    top: 18px;
+    left: 18px;
+    width: 94px;
+  }
+
+  .events-content {
+    padding: 110px 18px 70px;
+  }
+
+  .events-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+/* Photo lightbox */
+.events-photo {
+  display: block;
+  width: 100%;
+  border: 0;
+  cursor: zoom-in;
+}
+.events-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  padding: 65px 25px;
+  background: rgba(28, 21, 44, 0.9);
+  backdrop-filter: blur(8px);
+}
+.events-lightbox-close {
+  position: fixed;
+  top: 18px;
+  right: 24px;
+  z-index: 102;
+  width: 52px;
+  height: 52px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.9);
+  color: #66538d;
+  font-size: 36px;
+  line-height: 1;
+  cursor: pointer;
+}
+.events-lightbox-image {
+  display: block;
+  max-width: 92vw;
+  max-height: 82vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  cursor: zoom-in;
+  transition: transform .25s ease;
+}
+.events-lightbox-image.is-zoomed {
+  transform: scale(1.5);
+  cursor: zoom-out;
+}
+.events-lightbox-hint {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 13px;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+/* Back to top: shown after scrolling down the events gallery */
+.events-top-btn {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 15;
+  width: 110px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.events-top-btn img { display: block; width: 100%; height: auto; }
+@media (max-width: 600px) {
+  .events-top-btn { right: 18px; bottom: 18px; width: 82px; }
+}
+
+/* Let Framer Motion control the lightbox image zoom/entrance. */
+.events-lightbox-image { transition: none; will-change: transform, opacity; }
+
+
+/* Events footer — match IndexPage's video-section footer */
+.events-page .events-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  gap: 10px;
+  padding: 15px 18px 18px;
+  color: #fff;
+  background: #5f83c1;
+  font-family: "Noto Sans TC", "Hiragino Sans", "Meiryo", sans-serif;
+}
+.events-page .events-footer .footer-logo-img {
+  display: block;
+  width: auto;
+  max-width: 150px;
+  max-height: 65px;
+  height: auto;
+  object-fit: contain;
+}
+.events-page .events-footer .footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px 26px;
+}
+.events-page .events-footer .footer-links a {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-decoration: none;
+  transition: opacity .2s ease;
+}
+.events-page .events-footer .footer-links a:hover { opacity: .65; }
+.events-page .events-footer .footer-divider {
+  width: min(450px, 85%);
+  height: 1px;
+  background: rgba(255,255,255,.35);
+}
+.events-page .events-footer .footer-copyright {
+  margin: 0;
+  font-size: .72rem;
+  letter-spacing: .05em;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .events-page .events-footer { gap: 8px; padding: 12px 12px 14px; }
+  .events-page .events-footer .footer-logo-img { max-width: 105px; max-height: 48px; }
+  .events-page .events-footer .footer-links { gap: 8px 16px; }
+  .events-page .events-footer .footer-links a { font-size: .76rem; }
+}

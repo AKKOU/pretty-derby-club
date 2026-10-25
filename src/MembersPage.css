@@ -1,0 +1,242 @@
+/* Members page: same layered background as the homepage */
+.members-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background: url('/images/BG_Dot.png') repeat,
+    linear-gradient(to bottom, #ffdcf4, #d3dbff);
+}
+
+.members-menu-btn {
+  position: fixed;
+  z-index: 10;
+  top: 28px;
+  left: 28px;
+  width: 130px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.members-menu-btn img {
+  display: block;
+  width: 100%;
+}
+
+.members-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 90px 0 30px;
+}
+
+.members-title {
+  display: block;
+  width: 90%;
+  max-width: 1240px;
+  height: auto;
+  max-height: 18vh;
+  object-fit: contain;
+}
+
+.members-gallery {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 0;
+  outline-offset: -5px;
+  touch-action: pan-y;
+}
+
+.members-card-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  max-height: 60vh;
+  perspective: 1400px;
+}
+
+.members-card {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  transform-style: preserve-3d;
+}
+
+.members-card.is-active {
+  cursor: default;
+}
+
+.members-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.members-gallery-hint {
+  margin-top: 20px;
+  color: #8062ac;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.members-gallery-dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.members-gallery-dot {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.members-gallery-dot.is-active {
+  background: #a995e8;
+  transform: scale(1.15);
+}
+
+@media (max-width: 768px) {
+  .members-menu-btn {
+    top: 18px;
+    left: 18px;
+    width: 94px;
+  }
+
+  .members-content {
+    padding-top: 100px;
+  }
+
+  .members-title {
+    width: 95%;
+    max-height: 15vh;
+  }
+
+  .members-card-stage {
+    width: 62vw;
+    max-height: 55vh;
+  }
+
+  .members-gallery-hint {
+    margin-top: 12px;
+  }
+}
+
+
+/* Side menu: same layout and styling as IndexPage */
+.members-page .menu-overlay {
+  position: fixed;
+  z-index: 20;
+  inset: 0;
+  visibility: hidden;
+  opacity: 0;
+  background: rgba(44, 34, 67, 0.48);
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.members-page .menu-overlay.is-open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.members-page .side-menu {
+  position: fixed;
+  z-index: 21;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: min(400px, 88vw);
+  padding: 34px 34px 48px;
+  overflow-y: auto;
+  background: linear-gradient(160deg, #fff3fb, #e3ddfb);
+  box-shadow: 10px 0 30px rgba(50, 36, 83, 0.22);
+  transform: translateX(-105%);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.members-page .side-menu.is-open {
+  transform: translateX(0);
+}
+
+.members-page .menu-close {
+  align-self: flex-end;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  color: #715e9d;
+  background: transparent;
+  font-size: 2.4rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.members-page .side-menu-logo-link {
+  display: block;
+  align-self: center;
+  width: min(270px, 90%);
+  margin: 14px 0 38px;
+}
+
+.members-page .side-menu-logo {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+.members-page .side-menu-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.members-page .side-menu-nav a {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 18px 20px;
+  border-radius: 14px;
+  color: #58456f;
+  background: rgba(255, 255, 255, 0.55);
+  font-size: 1.25rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.members-page .side-menu-nav a:hover {
+  background: rgba(255, 255, 255, 0.95);
+  transform: translateX(6px);
+}
+
+.members-page .side-menu-nav small {
+  color: #8d7cad;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+}
